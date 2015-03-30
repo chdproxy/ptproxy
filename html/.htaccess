@@ -1,0 +1,10 @@
+Options +FollowSymLinks
+IndexIgnore */*
+RewriteEngine on
+#RewriteBase /html/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+php_flag zlib.output_compression Off
+php_flag output_buffering Off
+# otherwise forward it to index.php
+RewriteRule . index.php
